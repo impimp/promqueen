@@ -34,7 +34,7 @@
   name = "github.com/prometheus/common"
 
 [[constraint]]
-  name = "github.com/prometheus/prometheus"
+  name = "github.com/Cleafy/prometheus"
   version = "<=1.5.3"
 
 [[constraint]]
