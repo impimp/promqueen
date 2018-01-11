@@ -16,7 +16,7 @@ import (
 	dto "github.com/prometheus/client_model/go"
 	"github.com/prometheus/common/expfmt"
 	"github.com/prometheus/common/model"
-	"github.com/prometheus/prometheus/storage/local"
+	"github.com/Cleafy/prometheus/storage/local"
 	"github.com/sirupsen/logrus"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 	filetype "gopkg.in/h2non/filetype.v1"

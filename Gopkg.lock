@@ -307,7 +307,7 @@
   revision = "a6e9df898b1336106c743392c48ee0b71f5c4efa"
 
 [[projects]]
-  name = "github.com/prometheus/prometheus"
+  name = "github.com/Cleafy/prometheus"
   packages = ["config","discovery","discovery/azure","discovery/consul","discovery/dns","discovery/ec2","discovery/file","discovery/gce","discovery/kubernetes","discovery/marathon","discovery/triton","discovery/zookeeper","notifier","promql","relabel","retrieval","rules","storage","storage/local","storage/local/chunk","storage/local/codable","storage/local/index","storage/metric","storage/remote","storage/remote/graphite","storage/remote/influxdb","storage/remote/opentsdb","template","util/cli","util/flock","util/httputil","util/stats","util/strutil","util/testutil","util/treecache","web","web/api/v1","web/ui"]
   revision = "1edf99ce5dc52e8e680176c22864e5acc67b9243"
   version = "v1.5.3"
