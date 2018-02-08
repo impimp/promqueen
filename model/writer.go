@@ -5,7 +5,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 )
 
 var mutex = &sync.Mutex{}

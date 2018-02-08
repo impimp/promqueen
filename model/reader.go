@@ -6,7 +6,7 @@ import (
 	"io"
 	"unsafe"
 
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 )
 
 // NewFrameReader returns a channel of Frames. The channel is closed whenever

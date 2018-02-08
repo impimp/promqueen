@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/mattetti/filebuffer"
-	"github.com/sirupsen/logrus"
+	"github.com/Sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 )
 

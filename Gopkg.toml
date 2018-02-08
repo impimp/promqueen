@@ -38,7 +38,7 @@
   version = "<=1.5.3"
 
 [[constraint]]
-  name = "github.com/sirupsen/logrus"
+  name = "github.com/Sirupsen/logrus"
   version = "1.0.3"
 
 [[constraint]]

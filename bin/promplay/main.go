@@ -13,11 +13,12 @@ import (
 
 	cm "github.com/cleafy/promqueen/model"
 	"github.com/mattetti/filebuffer"
-	dto "github.com/prometheus/client_model/go"
+		dto "github.com/prometheus/client_model/go"
+	 //dto "github.com/prometheus/vendor/github.com/prometheus/client_model/go"
 	"github.com/prometheus/common/expfmt"
-	"github.com/prometheus/common/model"
-	"github.com/Cleafy/prometheus/storage/local"
-	"github.com/sirupsen/logrus"
+	"github.com/prometheus/prometheus-common/model"
+	"github.com/prometheus/storage/local"
+	"github.com/Sirupsen/logrus"
 	kingpin "gopkg.in/alecthomas/kingpin.v2"
 	filetype "gopkg.in/h2non/filetype.v1"
 )
@@ -39,12 +40,13 @@ var (
 	framereader      = make(<-chan cm.Frame)
 	Version          = "unversioned"
 	cfgMemoryStorage = local.MemorySeriesStorageOptions{
-		MemoryChunks:       1024,
-		MaxChunksToPersist: 1024,
-		//PersistenceStoragePath:
+		// MemoryChunks:       5000,
+		// MaxChunksToPersist: 5000,
+		// //PersistenceStoragePath:
 		//PersistenceRetentionPeriod:
 		//CheckpointInterval:         time.Minute*30,
 		//CheckpointDirtySeriesLimit: 10000,
+		// numChunksToPersist: 10000,
 		Dirty:          true,
 		PedanticChecks: true,
 		SyncStrategy:   local.Always,
@@ -149,6 +151,11 @@ func updateURLTimestamp(timestamp int64, name string, url string, body io.Reader
 
 func main() {
 	kingpin.Version(Version)
+
+	
+	kingpin.Flag("memory.chunks", "MemoryChunks").Default("2048").IntVar(&cfgMemoryStorage.MemoryChunks);
+	kingpin.Flag("memory.max-chunks-to-persists", "MaxChunksToPersist").Default("2048").IntVar(&cfgMemoryStorage.MaxChunksToPersist);
+
 
 	kingpin.Flag("storage.path", "Directory path to create and fill the data store under.").Default("data").StringVar(&cfgMemoryStorage.PersistenceStoragePath)
 	kingpin.Flag("storage.retention-period", "Period of time to store data for").Default("360h").DurationVar(&cfgMemoryStorage.PersistenceRetentionPeriod)
