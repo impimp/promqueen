@@ -7,20 +7,6 @@
 - `promrec` tapes the metrics in a specified output file.
 - `promplay` backfills the _prometheus_ database from scratch.
 
-## PromREC
-
-```
-usage: promrec [<flags>]
-
-Flags:
-      --help              Show context-sensitive help (also try --help-long and --help-man).
-      --debug             Enable debug mode.
-      --gzip              Enable gzip mode.
-  -i, --interval=60s      Timeout waiting for ping.
-  -u, --umap=UMAP ...     stringmap [eg. service.name=http://get.uri:port/uri].
-  -o, --output="metrics"  Output file.
-      --version           Show application version.
-```
 
 ## PromPLAY
 
@@ -28,17 +14,23 @@ Flags:
 usage: promplay [<flags>]
 
 Flags:
-      --help                 Show context-sensitive help (also try --help-long and --help-man).
+      --help                 Show context-sensitive help (also try --help-long
+                             and --help-man).
       --debug                Enable debug mode.
-      --nopromcfg            Disable the generation of the prometheus cfg file (prometheus.yml)
-  -d, --dir="/tmp"           Input directory.
+      --nopromcfg            Disable the generation of the prometheus cfg file
+                             (prometheus.yml)
+  -d, --dir="."              Input directory.
       --version              Show application version.
-      --storage.path="data"  Directory path to create and fill the data store under.
-      --storage.retention-period=360h
+      --memory.chunks=2048   MemoryChunks
+      --memory.max-chunks-to-persists=2048  
+                             MaxChunksToPersist
+      --storage.path="data"  Directory path to create and fill the data store
+                             under.
+      --storage.retention-period=360h  
                              Period of time to store data for
-      --storage.checkpoint-interval=30m
+      --storage.checkpoint-interval=30m  
                              Period of time to store data for
-      --storage.checkpoint-dirty-series-limit=10000
+      --storage.checkpoint-dirty-series-limit=10000  
                              Period of time to store data for
 ```
 
